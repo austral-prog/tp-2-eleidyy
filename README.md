@@ -19,6 +19,15 @@ Ada Lovelace
 ADA LOVELACE  
 	ada lovelace
 ```
+first_name="AdA"
+last_name="LoVeLAce"
+name=f"{first_name} {last_name}"
+name_lower=name.lower()
+print(name.lower())
+print(name.upper())             
+print(name.title())
+print(f"\t{name.lower()}")
+print(f"\t{name_lower}")
 
 ## Ejercicio 2 - Earth
 
@@ -32,7 +41,17 @@ La respuesta debería tener el siguiente formato (Donde X es Bangladesh e Y es B
 The result of X comes first in the dictionary than Y is True/False.
 The result of Y comes first in the dictionary than X is True/False.
 ```
+X = "Bangladesh"
+Y = "Barbados"
 
+def comes_first(X, Y):
+    if X < Y:
+        return f"The result of {X} comes first in the dictionary than {Y} is True."
+    else:
+        return f"The result of {X} comes first in the dictionary than {Y} is False."
+    
+result = comes_first(X, Y)
+print(result)
 
 ## Ejercicio 3 - Change
 
@@ -53,3 +72,23 @@ Pesos:
 Centavos:
 25
 ```
+def informe_devolucion(gasto, dinero_recibido):
+    # Calcular el vuelto
+    vuelto = dinero_recibido - gasto
+
+    # Separar la parte entera de la parte decimal
+    pesos = int(vuelto)
+    centavos = round((vuelto - pesos) * 100, 0)
+
+    # Imprimir el informe de devolución
+    print("Informe de devolución:")
+    print("=======================")
+    print("Cantidad a devolver:")
+    print(f"{pesos} pesos y {centavos} centavos")
+
+# Ejemplo de uso
+gasto = float(input("Ingresar gasto: "))
+dinero_recibido = float(input("Dinero recibido: "))
+
+informe_devolucion(gasto, dinero_recibido)
+
